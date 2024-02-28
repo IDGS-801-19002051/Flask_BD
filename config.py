@@ -1,5 +1,6 @@
 import os
 from sqlalchemy import create_engine
+import urllib
 
 class Config(object):
   SECRET_KEY="clave nueva"
@@ -7,6 +8,6 @@ class Config(object):
 
 class DevelopmentConfig(Config):
   DEBUG=True
-  SQLALCHEMY_DATABASE_URL="mysql+pymysql://chekho:1234@127.0.0.1/bdidgs801"
-  SQLALCHEMY_TRACK_MODIFIVATIONS=False
+  SQLALCHEMY_DATABASE_URI="mysql+pymysql://chekho:1234@127.0.0.1/bdidgs801"
+  SQLALCHEMY_TRACK_MODIFICATIONS=False
   
