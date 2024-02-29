@@ -20,6 +20,14 @@ def indexado():
   create_form = forms.UserForm2(request.form)
   return render_template("index.html", form=create_form) #pagina1
 
+@app.route("/ABC_Completo",methods={"GET","POST"})
+def ABCompleto():
+  alum_form=forms.UserForm2(request.form)
+  alumno=Alumnos.query.all()
+  
+  return render_template("ABC_Completo.html", alumno=alumno)
+
+
 @app.route("/alumnos", methods=["GET", "POST"])
 def alumnos():
   alumno_clase=forms.UserForm(request.form)
